@@ -11,8 +11,10 @@ public class Title : MonoBehaviour {
 	public GameObject corona;
 	public GameObject game;
 	
+	const string CreativeCommons30Url = "http://creativecommons.org/licenses/by/3.0/";
+	const string CreativeCommons30NonCommercialUrl = "http://creativecommons.org/licenses/by-nc/3.0/";
+	
 	MenuMode mode = MenuMode.Title;
-	const string CreativeCommons30Url = "http://creativecommons.org/licenses/by/3.0/legalcode";
 	
 	enum MenuMode {
 		Title,
@@ -109,6 +111,7 @@ public class Title : MonoBehaviour {
 		GUILayout.BeginHorizontal();
 		var spacerWidth = (Screen.width - 227.0f) / 2.0f;
 		GUILayout.Space(spacerWidth);
+		
 		GUILayout.BeginVertical();
 		
 		GUILayout.Label(title);
@@ -116,17 +119,41 @@ public class Title : MonoBehaviour {
 		{
 			mode = MenuMode.Title;
 		}
+		GUILayout.EndVertical();
+		GUILayout.EndHorizontal();
+		GUILayout.BeginVertical();
 		GUILayout.Label("Music:");
 		GUILayout.Label("     Winter Reflections - Kevin Macloed (incompetech.com)", GUILayout.ExpandWidth(true));
 		GUILayout.Label("     Plans in Motion - Kevin Macloed (incompetech.com)", GUILayout.ExpandWidth(true));
+		GUILayout.Label("Artwork:");
 		GUILayout.BeginHorizontal();
-		GUILayout.Label("Kevin Macloed's is distributed under the ");
-		if (GUILayout.Button("Creative Commons 3.0 license")) {
+		GUILayout.Label("     Nova texture - ", GUILayout.ExpandWidth(false));
+		if (GUILayout.Button("Poe Tatum", GUILayout.ExpandWidth(false))) {
+			Application.OpenURL("http://www.flickr.com/photos/poetatum/3418291075/");
+		}
+		GUILayout.EndHorizontal();
+		GUILayout.Label("     Ship - Logan Barnett");
+		GUILayout.Label("     Navigation Ring - Logan Barnett");
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("     Planetary textures - James Hastings-Trew ", GUILayout.ExpandWidth(false));
+		if (GUILayout.Button("Planet Pixel Emporium", GUILayout.ExpandWidth(false))) {
+			Application.OpenURL("http://planetpixelemporium.com/planets.html");
+		}
+		GUILayout.EndHorizontal();
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Kevin Macloed's music is distributed under the ", GUILayout.ExpandWidth(false));
+		if (GUILayout.Button("Creative Commons 3.0 license", GUILayout.ExpandWidth(false))) {
 			Application.OpenURL(CreativeCommons30Url);
 		}
 		GUILayout.EndHorizontal();
-		GUILayout.EndVertical();
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Poe Tatum's artwork is distributed under the ");
+		if (GUILayout.Button("Creative Commons 3.0 non-commercial license", GUILayout.ExpandWidth(false))) {
+			Application.OpenURL(CreativeCommons30NonCommercialUrl);
+		}
 		GUILayout.EndHorizontal();
+		GUILayout.EndVertical();
+		
 	}
 	
 	void TitleGui() {
