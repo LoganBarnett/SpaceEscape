@@ -123,8 +123,8 @@ public class Title : MonoBehaviour {
 		GUILayout.EndHorizontal();
 		GUILayout.BeginVertical();
 		GUILayout.Label("Music:");
-		GUILayout.Label("     Winter Reflections - Kevin Macloed (incompetech.com)", GUILayout.ExpandWidth(true));
-		GUILayout.Label("     Plans in Motion - Kevin Macloed (incompetech.com)", GUILayout.ExpandWidth(true));
+		GUILayout.Label("     Winter Reflections - Kevin Macleod (incompetech.com)", GUILayout.ExpandWidth(true));
+		GUILayout.Label("     Plans in Motion - Kevin Macleod (incompetech.com)", GUILayout.ExpandWidth(true));
 		GUILayout.Label("Artwork:");
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("     Nova texture - ", GUILayout.ExpandWidth(false));
